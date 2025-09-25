@@ -1,3 +1,18 @@
-#STEP 1
+#1
 py -m venv .venv
+
+#2
+.venv\Scripts\activate
+
+#3
+pip install -r requirements.txt
+
+#4 Ekstrak video menjadi frame
+py ekstrak.py
+
+#5 Preprocessing foto
+py preprocessing.py
+
+#6 Train
+py train.py
 
