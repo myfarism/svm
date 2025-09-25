@@ -1,10 +1,13 @@
 #1
+#Ini jalanin satu kali aja
 py -m venv .venv
 
 #2
+#Jalanin ini setiap buka folder di cmd
 .venv\Scripts\activate
 
 #3
+#Ini jalanin satu kali aja
 pip install -r requirements.txt
 
 # Kalo ada dataset baru
