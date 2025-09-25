@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Live Face Recognition</h1>
+    
+    <!-- Video Streaming -->
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+
+    <h2>Detected Faces</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="detected-faces">
+        </tbody>
+    </table>
+
+    <script>
+        function fetchDetectedFaces() {
+            $.getJSON("/detected_faces", function(data) {
+                $("#detected-faces").empty(); 
+                data.forEach(function(name) {
+                    $("#detected-faces").append("<tr><td>" + name + "</td></tr>");
+                });
+            });
+        }
+
+        // Refresh tabel setiap 2 detik
+        setInterval(fetchDetectedFaces, 2000);
+    </script>
+</body>
+</html>
