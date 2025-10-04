@@ -16,7 +16,7 @@ sp = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 facerec = dlib.face_recognition_model_v1("dlib_face_recognition_resnet_model_v1.dat")
 
 # Path dataset
-DATASET_PATH = "processed"
+DATASET_PATH = "preprocessed"
 
 # List untuk menyimpan fitur wajah dan label
 face_descriptors = []
